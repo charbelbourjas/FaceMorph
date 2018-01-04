@@ -1,0 +1,28 @@
+Img1: test1.jpg
+Img2: test2.jpg
+1. Get landmarks
+  a. python getlandmarks.py test1.jpg test2.jpg
+  b. Returns 2 files of face landmark points
+    i. test1.jpg.txt
+    ii. test2.jpg.txt
+2. Do Delaunay Triangulation
+  a. python triangulation.py test1.jpg
+  b. Returns file of index of triangle vertices
+    i. test1_tri.txt
+3. Facemorph
+  a. python facemorph.py test1.jpg test2.jpg
+  b. Returns image of morphed face
+    i. test1test2.jpg
+4. Get landmarks of morphed image
+  a. Python getlandmarks.py <morphed image>
+    i. Python getlandmarks.py test1test2.jpg
+  b. Returns file of face landmark points
+    i. test1test2.jpg.txt
+5. Do Faceswap
+  a. python faceswap.py <image you want to superimpose it on> <morphed image>
+    i. python faceswap.py test1.jpg test1test2.jpg
+  b. Returns triangulated images of both images, superimposed image without seamless cloning, and final image after seamless cloning
+    i. Triangulated_face.jpg
+    ii. Triangulated_morphed_face.jpg
+    iii. Morphedface.jpg
+    iv. Swapped_face.jpg
